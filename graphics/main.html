@@ -2,13 +2,224 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="styles/globalStyles.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@700;800&display=swap" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/6346e13f8b.js" crossorigin="anonymous"></script>
 
 		<style>
+			.scoreboard-wrapper {
+				position: absolute;
+				top: 40px;
+				left: 50px;
+				height: 140px;
+				width: 306px;
+			}
 
+			.background {
+				position: absolute;
+				top: 0px;
+				height: 115px;
+				width: 300px;
+				background-color:white;
+				border-radius: 20px;
+				display: grid;
+				grid-template-columns: 6fr 1fr;
+				grid-template-rows: 1fr 2px 1fr 25px;
+				grid-template-areas: "a b" "c c" "d e" "f f";
+				border: 3px solid transparent;
+				background-clip: padding-box;
+				border: 10px solid white;
+			}
+
+			.background::before {
+				content: "";
+				position: absolute;
+				z-index: 1;
+				top: -5px;
+				left: -5px;
+				right: -5px;
+				bottom: -5px;
+				border: 5px solid #323031;
+				border-radius: 15px;
+			}
+
+			.background-wrapper {
+				position: absolute;
+				top: 0px;
+				height: 92px;
+				width: 306px;
+			}
+
+			.colorContainer {
+				width: 30px;
+				height: 90px;
+				position: absolute;
+				right: 43px;
+				display: grid;
+				grid-template-rows: 1fr 1fr;
+				grid-template-columns: 1fr;
+			}
+
+			.color {
+				border-radius: 3px;
+				margin: 6px;
+			}
+
+			.colorA {
+				background-color: #FB7B08;
+			}
+
+			.colorB {
+				background-color: #B51CCE;
+			}
+
+			.teamInfo {
+				display: flex;
+				margin-left: 10px;
+				color: white;
+				font-weight: 700;
+				font-size: 33px;
+				margin-top: 2px;
+				max-height: 41px;
+				color: black;
+			}
+
+			.score {
+				font-weight: 700;
+				font-size: 2em;
+				color: black;
+				text-align: center;
+				background-color: #E8E8E8;
+				font-family: 'Montserrat';
+				border-radius: 0 3px 0 0;
+				padding: 2px 4px;
+			}
+
+			.placeholder {
+				position: absolute;
+				width: 1920px;
+				height: 1080px;
+				top: 0;
+				left: 0;
+				z-index: -999;
+				display: none;
+			}
+			
+			.separator {
+				background-color: #323031;
+				grid-area: c;
+				height: 2px;
+			}
+
+			.background > .flavor-text {
+				background-color: #323031;
+				width: 100%;
+				grid-area: f;
+				display: flex;
+				justify-content: center;
+				color: white;
+			}
+
+			.background > .flavor-text > fitted-text {
+				font-size: 20px;
+			}
+
+			span.pronoun {
+				font-size: 23px;
+				background-color: #323031;
+				color: white;
+				padding: 0 5px;
+			}
+
+			.casters-wrapper {
+				position: absolute;
+				top: 200px;
+				left: 53px;
+				opacity: 0;
+			}
+
+			.casters-background {
+				background-color: white;
+				color: black;
+				font-size: 2em;
+				width: 280px;
+				padding: 5px 10px;
+				border: 10px solid white;
+				border-radius: 20px;
+				position: relative;
+			}
+
+			.casters-background > fitted-text {
+				margin-left: 50px;
+			}
+
+			.casters-background::before {
+				content: "";
+				position: absolute;
+				z-index: 1;
+				top: -5px;
+				left: -5px;
+				right: -5px;
+				bottom: -5px;
+				border: 5px solid #323031;
+				border-radius: 15px;
+			}
+
+			.casters-icon {
+				height: 100%;
+				width: 48px;
+				position: absolute;
+				z-index: 10;
+				display: flex;
+				align-content: center;
+				align-items: center;
+				left: 25px;
+				font-size: 50px;
+				color: #323031;
+			}
+
+			.watermark {
+				width: 300px;
+				opacity: 0.25;
+				position: absolute;
+				bottom: 50px;
+				right: 50px;
+			}
 		</style>
 	</head>
 	<body>
-		
+		<div class="scoreboard-wrapper">
+			<div class="background-wrapper">
+				<div class="background">
+					<div class="teamInfo">
+						<fitted-text align="left" text="Team A" max-width="215" id="teamAName"></fitted-text>
+					</div>
+					<fitted-text class="score" align="center" text="-" max-width="36" id="teamAScore"></fitted-text>
+					<div class="separator"></div>
+					<div class="teamInfo">
+						<fitted-text align="left" text="Team B" max-width="215" id="teamBName"></fitted-text>
+					</div>
+					<fitted-text class="score" align="center" text="-" max-width="36" id="teamBScore"></fitted-text>
+					<div class="colorContainer">
+						<div class="color" id="teamAColor"></div>
+						<div class="color" id="teamBColor"></div>
+					</div>
+					<div class="flavor-text">
+						<fitted-text text="I Dair You!" align="center" max-width="290"></fitted-text>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="casters-wrapper">
+			<div class="casters-icon">
+				<i class="fas fa-microphone"></i>
+			</div>
+			<div class="casters-background"></div>
+		</div>
+
+		<img src="img/logowithtext.png" class="watermark">
 
 		<script src="../node_modules/gsap/dist/gsap.js"></script>
 		<script src="scripts/fitted-text.js"></script>

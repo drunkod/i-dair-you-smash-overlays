@@ -1,0 +1,13 @@
+:root {
+	--IDYBackground: #675290;
+	--IDYDarkText: #323031;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	width: 1920px;
+	height: 1080px;
+	overflow: hidden;
+	font-family: 'Maven Pro';
+}
