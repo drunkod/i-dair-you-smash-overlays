@@ -51,29 +51,6 @@
 				width: 306px;
 			}
 
-			.colorContainer {
-				width: 30px;
-				height: 90px;
-				position: absolute;
-				right: 43px;
-				display: grid;
-				grid-template-rows: 1fr 1fr;
-				grid-template-columns: 1fr;
-			}
-
-			.color {
-				border-radius: 3px;
-				margin: 6px;
-			}
-
-			.colorA {
-				background-color: #FB7B08;
-			}
-
-			.colorB {
-				background-color: #B51CCE;
-			}
-
 			.teamInfo {
 				display: flex;
 				margin-left: 10px;
@@ -123,6 +100,7 @@
 
 			.background > .flavor-text > fitted-text {
 				font-size: 20px;
+				margin-top: 2px;
 			}
 
 			span.pronoun {
@@ -175,16 +153,16 @@
 				align-content: center;
 				align-items: center;
 				left: 25px;
-				font-size: 50px;
+				font-size: 40px;
 				color: #323031;
 			}
 
 			.watermark {
-				width: 300px;
+				width: 400px;
 				opacity: 0.25;
 				position: absolute;
 				bottom: 50px;
-				right: 50px;
+				right: 75px;
 			}
 		</style>
 	</head>
@@ -193,18 +171,14 @@
 			<div class="background-wrapper">
 				<div class="background">
 					<div class="teamInfo">
-						<fitted-text align="left" text="Team A" max-width="215" id="teamAName"></fitted-text>
+						<fitted-text align="left" text="Team A" max-width="215" id="p1Name"></fitted-text>
 					</div>
-					<fitted-text class="score" align="center" text="-" max-width="36" id="teamAScore"></fitted-text>
+					<fitted-text class="score" align="center" text="-" max-width="36" id="p1Score"></fitted-text>
 					<div class="separator"></div>
 					<div class="teamInfo">
-						<fitted-text align="left" text="Team B" max-width="215" id="teamBName"></fitted-text>
+						<fitted-text align="left" text="Team B" max-width="215" id="p2Name"></fitted-text>
 					</div>
-					<fitted-text class="score" align="center" text="-" max-width="36" id="teamBScore"></fitted-text>
-					<div class="colorContainer">
-						<div class="color" id="teamAColor"></div>
-						<div class="color" id="teamBColor"></div>
-					</div>
+					<fitted-text class="score" align="center" text="-" max-width="36" id="p2Score"></fitted-text>
 					<div class="flavor-text">
 						<fitted-text text="I Dair You!" align="center" max-width="290"></fitted-text>
 					</div>

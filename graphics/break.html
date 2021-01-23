@@ -14,24 +14,7 @@
 				width: 100vw; height: 100vh;
 				position: absolute;
 				top: 0; left: 0;
-				background-color: #7C63AD;
-			}
-
-			.background > .dot-grid {
-				width: 2520px; height: 100%;
-				display: grid;
-				grid-template-columns: repeat(21, 1fr);
-				grid-template-rows: repeat(9, 1fr);
-				align-items: center;
-				justify-items: center;
-				background: linear-gradient(-225deg, #675290 0%, #765EA6 100%);
-			}
-
-			.background > .dot-grid > .dot {
-				width: 5px;
-				height: 5px;
-				background-color: #4B3C69;
-				border-radius: 50%;
+				background-image: url('./img/bg.png');
 			}
 
 			.background > .side-logo-img {
@@ -63,24 +46,22 @@
 
 			.main-scene > .logo {
 				height: 800px;
-				width: 800px;
+				width: 700px;
 
 				display: flex;
+				flex-direction: column;
 				position: relative;
 				z-index: 5;
 			}
 
-			.main-scene > .logo > img {
-				position: absolute;
-			}
-
 			.main-scene > .logo > img.text {
-				width: 800px;
-				bottom: 200px;
+				width: 600px;
+				margin-top: -50px;
 			}
 
 			.main-scene > .logo > img.emblem {
-				width: 550px;
+				width: 400px;
+				filter: drop-shadow(0 0 5px black);
 			}
 
 			.main-scene > .texts {
@@ -97,14 +78,17 @@
 				margin-top: 25px;
 				width: max-content;
 				position: relative;
-				margin-bottom: 10px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				width: 800px;
+				flex-direction: row;
 			}
 
 			.text-container > .line {
 				height: 65px;
-				width: 1100px;
-				background: linear-gradient(90deg, rgba(34, 34, 34, 0.75) 0%, rgba(34, 34, 34, 0) 100%);
-				margin-left: -300px;
+				width: 800px;
+				background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.25) 40%, rgba(255, 255, 255, 0.25) 60%, rgba(255, 255, 255, 0) 100%);
 				position: absolute;
 				top: 0;
 			}
@@ -127,20 +111,25 @@
 			}
 
 			.text-container > .icon {
-				position: absolute;
-				top: 4px;
-				left: -50px;
+				margin-top: 4px;
 				color: white;
 				filter: drop-shadow(0 0 2px var(--IDYDarkText));
 				font-size: 50px;
 				text-align: center;
-				width: 50px;
+				width: 60px;
+			}
+
+			.text-container-main {
+				margin-bottom: 13px;
+			}
+
+			.text-container-music {
+				margin-top: 30px;
 			}
 
 			.text-container-main > fitted-text {
 				font-size: 65px;
 				height: 72px;
-				margin-left: -55px;
 				font-weight: 800;
 			}
 
@@ -153,14 +142,29 @@
 			}
 
 			.text-container-music > .icon {
-				top: 30px;
+				margin-top: 28px;
 			}
 
-			.text-container-music > fitted-text {
+			.text-container-music div {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				position: relative;
+				margin-top: -5px;
+			}
+
+			.text-container-music > div > fitted-text {
 				font-size: 45px;
 				height: 52px;
 				font-weight: 700;
 				margin-bottom: -5px;
+				font-size: 50px;
+				color: white;
+				filter: drop-shadow(1px 1px 2px var(--IDYDarkText));
+				width: max-content;
+				padding: 0 15px;
+				margin-top: 5px;
+				z-index: 2;
 			}
 
 			.text-container-comms > fitted-text {
@@ -183,314 +187,48 @@
 				width: 400px;
 			}
 
-			/* Stages */
-			.stages-scene {
-				display: flex;
-				flex-direction: column;
-			}
-
-			.stage {
-				border: 10px solid white;
-				border-radius: 20px;
-				position: relative;
-				z-index: 3;
-			}
-
-			.stage:before {
-				content: "";
+			.particle {
+				width: 100px;
 				position: absolute;
-				z-index: 1;
-				top: -5px;
-				left: -5px;
-				right: -5px;
-				bottom: -5px;
-				border: 5px solid #323031;
-				border-radius: 15px;
+				background-image: url('img/fox-hexagon.png');
+				background-size: contain;
+				background-repeat: no-repeat;
 			}
-
-			.stages-grid {
-				height: 665px;
-				gap: 15px;
-				width: 1600px;
-				display: grid;
-				grid-template-columns: repeat(7, 1fr);
-				grid-template-rows: 1fr;
-				margin-top: 100px;
-			}
-
-			.stage-image {
-				background-position: center center;
-				background-size: cover;
-				height: 500px;
-				position: relative;
-				border-radius: 5px 5px 0 0;
-			}
-
-			.stage-info {
-				text-align: center;
-				border-radius: 0 0 5px 5px;
-				color: white;
-			}
-
-			.stage-mode {
-				margin: 0;
-				background-color: #E8E8E8;
-				font-size: 2em;
-				padding: 5px 0;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				color: #323031;
-			}
-
-			.stage-name {
-				background-color: white;
-				margin: 0;
-				height: 100px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				padding: 0 5px 5px 5px;
-				line-height: 1.2em;
-				font-weight: 600;
-				color: #323031;
-			}
-
-			.stage-winner {
-				width: 100%;
-				height: 100%;
-				background-color: rgba(40, 40, 40, 0.75);
-				border-radius: 5px 5px 0 0;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				color: white;
-				font-size: 1.7em;
-				position: absolute;
-				left: 0; top: 0;
-				font-weight: 600;
-				text-align: center;
-			}
-
-			.stages-scoreboard {
-				width: 1000px;
-				height: 60px;
-				position: absolute;
-				top: 100px;
-				display: grid;
-				grid-template-rows: 1fr;
-				grid-template-columns: 10fr 0.75fr 10fr;
-				background-color: #E8E8E8;
-				border: 10px solid white;
-				border-radius: 20px;
-			}
-
-			.stages-scoreboard:before {
-				content: "";
-				position: absolute;
-				z-index: 1;
-				top: -5px;
-				left: -5px;
-				right: -5px;
-				bottom: -5px;
-				border: 5px solid #323031;
-				border-radius: 15px;
-			}
-
-			.stages-scoreboard img {
-				width: 100%;
-				margin-top: -15px;
-			}
-
-			.stages-scoreboard > .team-wrapper {
-				border-radius: 5px;
-				display: flex;
-				flex-direction: row;
-				flex-grow: 1;
-				height: 60px;
-				overflow: hidden;
-			}
-
-			.team-name-bg {
-				flex-grow: 1;
-				display: flex;
-				align-items: center;
-				background-color: #fefefe;
-			}
-
-			.team-name-bg fitted-text {
-				font-size: 2.5em;
-				margin: 10px;
-				margin-top: 5px;
-			}
-
-			#teamANameBG {
-				justify-content: flex-end;
-			}
-
-			.team-score-bg {
-				background-color: #E8E8E8;
-				width: 65px;
-				height: 60px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				margin-top: -1px;
-			}
-
-			.team-score-bg fitted-text {
-				font-size: 3.5em;
-				font-weight: 700;
-			}
-
-			/* Teams */
-
-			.teams-scene {
-				display: flex;
-			}
-
-			.team-info-container {
-				height: 550px;
-
-				display: grid;
-				grid-template-rows: 1fr;
-				grid-template-columns: 2fr 1.5fr 2fr;
-			}
-
-			.teams-versus {
-				font-size: 10em;
-				font-weight: 700;
-				color: white;
-				text-align: center;
-				align-self: center;
-			}
-
-			.team-info {
-				border-radius: 20px;
-				width: 475px;
-				border: 15px solid white;
-				position: relative;
-			}
-
-			.team-info:before {
-				content: "";
-				position: absolute;
-				z-index: 1;
-				top: -5px;
-				left: -5px;
-				right: -5px;
-				bottom: -5px;
-				border: 8px solid #323031;
-				border-radius: 15px;
-			}
-
-			.team-title-bg {
-				background-color: #eee;
-				height: 100px;
-				font-weight: 700;
-				font-size: 3.5em;
-				display: flex;
-				align-items: center;
-				justify-content: flex-end;
-			}
-
-			.right-title-bg {
-				justify-content: flex-start;
-			}
-
-			.team-title-bg fitted-text {
-				margin: 0 20px;
-				margin-bottom: 25px;
-				color: black;
-			}
-
-			.team-players-bg {
-				background-color: white;
-				height: calc(100% - 75px);
-				margin-top: -25px;
-				padding-top: 10px;
-				height: 435px;
-				overflow: hidden;
-			}
-
-			.team-players-bg fitted-text {
-				color: black;
-				font-size: 40px;
-				margin: 0 20px;
-				height: 52px;
-			}
-
 		</style>
 	</head>
 	<body>
 		<div class="background flex-center-content">
-			<div class="dot-grid"></div>
+			<div class="particles"></div>
 			<div class="side-logo-img"></div>
 		</div>
 
 		<div class="scene main-scene flex-center-content">
 			<div class="logo flex-center-content">
 				<img class="emblem" src="img/logo.png">
-				<img class="text" src="img/logo-text.png">
+				<img class="text" src="img/idyWords.png">
 			</div>
 			<div class="texts">
 				<div class="text-container text-container-main">
 					<fitted-text max-width="790" text="Welcome to I Dair You!" id="main-flavor"></fitted-text>
 					<div class="line"></div>
 				</div>
+				<div class="text-container text-container-players">
+					<div class="icon"><i class="fas fa-gamepad"></i></div>
+					<fitted-text max-width="790" text="PLAYERS" id="main-players"></fitted-text>
+					<div class="line"></div>
+				</div>
 				<div class="text-container text-container-comms">
+					<div class="icon"><i class="fas fa-microphone"></i></div>
 					<fitted-text max-width="790" useInnerHTML text="CASTERS" id="main-casters"></fitted-text>
 					<div class="line"></div>
-					<div class="icon"><i class="fas fa-microphone"></i></div>
 				</div>
 				<div class="text-container text-container-music">
-					<fitted-text max-width="790" text="Squid Sisters" id="main-artist"></fitted-text>
-					<fitted-text max-width="790" text="Spicy Calamari Inkantation" id="main-song"></fitted-text>
-					<div class="line"></div>
 					<div class="icon"><i class="fas fa-music"></i></div>
-				</div>
-			</div>
-
-			<img class="ipl-powered" src="img/ipl-powered-reverse.png">
-		</div>
-
-		<div class="scene stages-scene flex-center-content">
-			<div class="stages-scoreboard">
-				<div class="team-wrapper">
-					<div class="team-name-bg" id="teamANameBG">
-						<fitted-text text="Luau" max-width="420" align="right" id="teamAName" style="display: flex; position: relative; white-space: nowrap; max-width: 390px; justify-content: flex-end"><div style="transform-origin: right center; text-align: right; transform: scaleX(1);">Luau</div></fitted-text>
+					<div>
+						<fitted-text max-width="790" text="Squid Sisters" id="main-artist"></fitted-text>
+						<fitted-text max-width="790" text="Spicy Calamari Inkantation" id="main-song"></fitted-text>
 					</div>
-					<div class="team-score-bg" id="teamAScoreBG">
-						<fitted-text text="4" max-width="60" align="right" id="teamAScore" style="display: flex; position: relative; white-space: nowrap; max-width: 60px; justify-content: flex-end"><div style="transform-origin: right center; text-align: right; transform: scaleX(1);">4</div></fitted-text>
-					</div>
-				</div>
-				<div></div>
-				<div class="team-wrapper">
-					<div class="team-score-bg" id="teamBScoreBG">
-						<fitted-text text="2" max-width="60" align="right" id="teamBScore" style="display: flex; position: relative; white-space: nowrap; max-width: 60px; justify-content: flex-end"><div style="transform-origin: right center; text-align: right; transform: scaleX(1);">2</div></fitted-text>
-					</div>
-					<div class="team-name-bg">
-						<fitted-text text="Xanadu" max-width="420" align="left" id="teamBName" style="display: flex; position: relative; white-space: nowrap; max-width: 390px; justify-content: unset"><div style="transform-origin: left center; text-align: left; transform: scaleX(1);">Xanadu</div></fitted-text>
-					</div>
-				</div>
-			</div>
-			<div class="stages-grid"></div>
-		</div>
-
-		<div class="scene teams-scene flex-center-content">
-			<div class="team-info-container">
-				<div class="team-info">
-					<div class="team-title-bg nextLeftTitleBG">
-						<fitted-text text="owo" align="right" id="nextTeamAName" max-width="435"></fitted-text>
-					</div>
-					<div class="team-players-bg" id="teamAplayersBG"></div>
-				</div>
-				<div class="teams-versus">VS</div>
-				<div class="team-info">
-					<div class="team-title-bg right-title-bg">
-						<fitted-text text="owo" align="left" id="nextTeamBName" max-width="435"></fitted-text>
-					</div>
-					<div class="team-players-bg" id="teamBplayersBG"></div>
+					<div class="line"></div>
 				</div>
 			</div>
 		</div>

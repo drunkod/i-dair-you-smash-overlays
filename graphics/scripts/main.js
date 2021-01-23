@@ -1,29 +1,26 @@
 // Team Scores
 
-const teamScores = nodecg.Replicant('teamScores', 'ipl-overlay-controls');
+const playerScores = nodecg.Replicant('playerScores');
 
-teamScores.on('change', newValue => {
-	document.querySelector('#teamAScore').setAttribute('text', newValue.teamA);
-	document.querySelector('#teamBScore').setAttribute('text', newValue.teamB);
+playerScores.on('change', newValue => {
+	document.querySelector('#p1Score').setAttribute('text', newValue.p1);
+	document.querySelector('#p2Score').setAttribute('text', newValue.p2);
 });
 
 // Scoreboard data
 
-const SBData = nodecg.Replicant('SBData', 'ipl-overlay-controls');
+const SBData = nodecg.Replicant('SBData');
 
 SBData.on('change', newValue => {
-	document.querySelector('#teamAName').setAttribute('text', newValue.teamAInfo.name);
-	document.querySelector('#teamBName').setAttribute('text', newValue.teamBInfo.name);
-
-	gsap.to('#teamAColor', {duration: 0.5, backgroundColor: (newValue.swapColorOrder) ? newValue.colorInfo.clrB : newValue.colorInfo.clrA});
-	gsap.to('#teamBColor', {duration: 0.5, backgroundColor: (newValue.swapColorOrder) ? newValue.colorInfo.clrA : newValue.colorInfo.clrB});
+	document.querySelector('#p1Name').setAttribute('text', newValue.p1Info.name);
+	document.querySelector('#p2Name').setAttribute('text', newValue.p2Info.name);
 
 	document.querySelector('.flavor-text fitted-text').setAttribute('text', newValue.flavorText);
 });
 
 // Show/hide scoreboard
 
-const SBShown = nodecg.Replicant('SBShown', 'ipl-overlay-controls');
+const SBShown = nodecg.Replicant('SBShown');
 
 SBShown.on('change', newValue => {
 	const opacity = newValue ? 1 : 0;
@@ -33,7 +30,7 @@ SBShown.on('change', newValue => {
 
 // Caster names
 
-const casterNames = nodecg.Replicant('casterNames', 'ipl-overlay-controls');
+const casterNames = nodecg.Replicant('casterNames');
 
 casterNames.on('change', newValue => {
 	let nameArray = newValue.split('&');
@@ -54,7 +51,7 @@ casterNames.on('change', newValue => {
 
 // Caster name animation
 
-nodecg.listenFor('mainShowCasters', 'ipl-overlay-controls', () => {
+nodecg.listenFor('mainShowCasters', () => {
 	gsap.fromTo('.casters-wrapper', {opacity: 0, y: -25}, {duration: 0.5, y: 0, opacity: 1, ease: 'power2.out'});
 	gsap.to('.casters-wrapper', {duration: 0.5, y: 25, opacity: 0, delay: 14.5, ease: 'power2.in'});
 });
