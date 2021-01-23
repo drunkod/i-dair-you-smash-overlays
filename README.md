@@ -4,6 +4,8 @@ A [NodeCG](http://github.com/nodecg/nodecg) bundle.
 
 ## Install
 
+- Install [git](http://git-scm.com/)
+
 - Install [node.js](https://nodejs.org/dist/latest-v12.x/) (Version 12 was used for development.)
 
 - Install [nodecg-cli](https://github.com/nodecg/nodecg-cli) using `npm`: `npm install -g nodecg-cli`

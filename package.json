@@ -1,7 +1,7 @@
 {
-	"name": "i-dair-you-overlays",
+	"name": "i-dair-you-smash-overlays",
 	"version": "0.0.0",
-	"description": "Splatoon broadcast overlays for I Dair You!, a Nintendo games tournament.",
+	"description": "Smash Bros. broadcast overlays for I Dair You!, a Nintendo games tournament.",
 	"author": {
 		"name": "inkfarer",
 		"email": "inkfarer@inkfarer.com",
@@ -23,9 +23,36 @@
 				"width": 1920,
 				"height": 1080
 			}
+		],
+		"dashboardPanels": [
+			{
+				"name": "main-controls",
+				"title": "Main controls",
+				"width": 2,
+				"file": "main.html",
+				"workspace": "I Dair You",
+				"headerColor": "#262F40"
+			},
+			{
+				"name": "break-controls",
+				"title": "Break controls",
+				"width": 2,
+				"file": "break.html",
+				"workspace": "I Dair You",
+				"headerColor": "#262F40"
+			},
+			{
+				"name": "music",
+				"title": "Music",
+				"width": 3,
+				"file": "music.html",
+				"workspace": "I Dair You",
+				"headerColor": "#262F40"
+			}
 		]
 	},
 	"dependencies": {
-		"gsap": "^3.6.0"
+		"gsap": "^3.6.0",
+		"lastfm": "^0.9.3"
 	}
 }

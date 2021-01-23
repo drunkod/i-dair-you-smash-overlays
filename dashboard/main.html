@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="globalStyles.css">
+	<style>
+		.scoreSpace {
+			align-items: center;
+		}
+
+		.scoreSpace .verticalLayout button {
+			width: 35px;
+		}
+
+		.scoreSpace input {
+			height: 55px;
+			font-size: 3em;
+			text-align: center;
+			margin: 0 5px;
+			width: 57px;
+
+			/*hide arrows*/
+			-moz-appearance: textfield;
+		}
+
+		.scoreSpace input::-webkit-outer-spin-button,
+		.scoreSpace input::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+  			margin: 0;
+		}
+	</style>
+</head>
+	<body>
+		<div class="horizontalLayout space scoreSpace">
+			<div class="verticalLayout">
+				<button class="btnGreen" id="teamAPlus">+</button>
+				<button class="btnRed" id="teamAMinus">-</button>
+			</div>
+			<input type="number" id="teamAScoreInput" size="2">
+			<div style="font-size: 2.5em">:</div>
+			<input type="number" id="teamBScoreInput" size="2">
+			<div class="verticalLayout">
+				<button class="btnGreen" id="teamBPlus">+</button>
+				<button class="btnRed" id="teamBMinus">-</button>
+			</div>
+		</div>
+
+		<div class="space">
+			<div class="title">Scoreboard</div>
+			<div class="showHideSpace">
+				<div class="selectContainer">
+					<div class="inputLabel">Player 1 name</div>
+					<input type="text" id="p1NameInput"></input>
+				</div>
+				<div class="selectContainer" style="margin: 0 5px;">
+					<div class="inputLabel">Player 2 name</div>
+					<input type="text" id="p2NameInput"></input>
+				</div>
+			</div>
+			<div class="selectContainer">
+				<div class="inputLabel">Flavor Text</div>
+				<input type="text" id="flavorTextInput"></input>
+			</div>
+			<button id="scoreboardUpdateBtn" class="maxWidthButton">Update</button>
+			<div class="horizontalLayout">
+				<button id="SBShow" class="btnGreen maxWidthButton">show</button>
+				<button id="SBHide" class="btnRed maxWidthButton">hide</button>
+			</div>
+		</div>
+
+		<div class="space">
+			<div class="title">Next players</div>
+			<div class="showHideSpace">
+				<div class="selectContainer">
+					<div class="inputLabel">Next player 1 name</div>
+					<input type="text" id="nextP1NameInput"></input>
+				</div>
+				<div class="selectContainer" style="margin: 0 5px;">
+					<div class="inputLabel">Next player 2 name</div>
+					<input type="text" id="nextP2NameInput"></input>
+				</div>
+			</div>
+			<button id="updateNextPlayers" class="maxWidthButton">Update</button>
+			<button id="beginNextMatch" class="maxWidthButton btnRed">begin next match</button>
+		</div>
+
+		<div class="space">
+			<div class="selectContainer">
+				<div class="inputLabel">Casters</div>
+				<input type="text" id="casterNameInput"></input>
+			</div>
+			<div class="horizontalLayout">
+				<button id="updateCasters" class="maxWidthButton">update</button>
+				<button id="showCasters" class="maxWidthButton">show</button>
+			</div>
+		</div>
+
+		<script src="globalScripts.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>

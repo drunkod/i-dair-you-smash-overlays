@@ -1,0 +1,35 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"additionalProperties": false,
+	"properties": {
+		"flavorText": {
+			"type": "string"
+		},
+		"p1Info": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				}
+			}
+		},
+		"p2Info": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"default": {
+		"flavorText": "I Dair You!",
+		"p1Info": {
+			"name": "Player 1"
+		},
+		"p2Info": {
+			"name": "Player 2"
+		}
+	}
+}

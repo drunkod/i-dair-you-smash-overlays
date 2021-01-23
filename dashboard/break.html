@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="globalStyles.css">
+</head>
+	<body>
+		<div class="space">
+			<div class="selectContainer">
+                <div class="inputLabel">Flavor Text</div>
+                <input type="text" id="flavorInput"></input>
+            </div>
+			<div class="selectContainer">
+                <div class="inputLabel">Casters</div>
+                <input type="text" id="castersInput"></input>
+            </div>
+			<button id="updateBreakTexts" class="maxWidthButton">Update</button>
+		</div>
+		<div class="space">
+			<div class="title">Next players</div>
+			<div class="showHideSpace">
+				<div class="selectContainer">
+					<div class="inputLabel">Next player 1 name</div>
+					<input type="text" id="p1NameInput"></input>
+				</div>
+				<div class="selectContainer" style="margin: 0 5px;">
+					<div class="inputLabel">Next player 2 name</div>
+					<input type="text" id="p2NameInput"></input>
+				</div>
+			</div>
+			<button id="updateNextPlayers" class="maxWidthButton">Update</button>
+			<div class="horizontalLayout">
+				<button id="showNextPlayers" class="btnGreen maxWidthButton">show</button>
+				<button id="hideNextPlayers" class="btnRed maxWidthButton">hide</button>
+			</div>
+		</div>
+
+		<script src="globalScripts.js"></script>
+		<script src="break.js"></script>
+	</body>
+</html>
