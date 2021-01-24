@@ -37,3 +37,9 @@ nodecg setup
 - Access the dashboard from `http://localhost:9090/` in your browser.
 
 - Access the graphics from the "Graphics" tab in the dashboard. They are made to be used as browser sources in your preferred broadcast application, with a resolution of 1920x1080.
+
+### Casters
+
+Casters are split by the & symbol and their pronouns should be surrounded in [[double brackets.]]
+
+Example: @user1 [[he/him]] & @user2 [[they/them]]
